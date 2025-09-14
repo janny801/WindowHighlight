@@ -12,6 +12,7 @@ borderPX := 2             ; thickness of border
 offsetPX := -7             ; extra outward expansion to cover window shadow
 topOffset := 4              ; move top border up by this many pixels
 pollMS := 120
+highlightEnabled := true    ; toggle flag (Alt + B)
 
 ; Create border GUIs once (no destroy/recreate flicker)
 CreateBorderGui("BorderTop")
@@ -24,6 +25,12 @@ OnExit, Cleanup
 return
 
 TrackActiveWindow:
+    ; bail out quickly when disabled
+    if (!highlightEnabled) {
+        HideBorders()
+        return
+    }
+
     WinGet, active_id, ID, A
     if (!active_id) {
         HideBorders()
@@ -62,6 +69,16 @@ Gui, BorderBottom:Show, % "x" X " y" (Y+H-bx) " w" W " h" bx " NA"
 
 return
 
+; === Toggle hotkey: Alt + B ===
+!b::
+    highlightEnabled := !highlightEnabled
+    if (!highlightEnabled) {
+        HideBorders()
+    } else {
+        Gosub, TrackActiveWindow  ; force immediate refresh when turning back on
+    }
+return
+
 CreateBorderGui(name) {
     global borderColor
     Gui, %name%:Destroy
@@ -82,4 +99,4 @@ Cleanup:
     Gui, BorderLeft:Destroy
     Gui, BorderRight:Destroy
     Gui, BorderBottom:Destroy
-    ExitApp
+    ExitApp  only change wat u need in order to have the hotkey added . and also u can just make it alt + b
