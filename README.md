@@ -6,6 +6,7 @@ A lightweight [AutoHotkey](https://www.autohotkey.com/) script that draws a **th
 - Border updates instantly as you switch focus
 - Lightweight and flicker-free
 - Customizable border color, thickness, and offset
+- Doesn’t show for a window in fullscreen mode
 
 ## Run on Startup
 To make the script run automatically every time you log in:
