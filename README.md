@@ -9,6 +9,13 @@ A lightweight [AutoHotkey](https://www.autohotkey.com/) script that draws a **th
 - Customizable border color, thickness, and offset
 - Doesn’t show for a window in fullscreen mode
 
+## Demo
+![WindowHighlight Preview](imgs/windowhighlightimage.png)  
+*This is how the window border looks like.*
+
+## Keyboard Shortcuts
+- **`Alt + B`** — Toggle the highlight border on or off
+
 ## Run on Startup
 To make the script run automatically every time you log in:
 
