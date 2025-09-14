@@ -2,6 +2,7 @@
 A lightweight [AutoHotkey](https://www.autohotkey.com/) script that draws a **thin red border around the active window** on [Windows](https://www.microsoft.com/windows) to make it easier to see which window is focused.
 
 ## Features
+- **Toggle on/off at any time with `Alt + B`**
 - Automatically highlights the currently active window
 - Border updates instantly as you switch focus
 - Lightweight and flicker-free
